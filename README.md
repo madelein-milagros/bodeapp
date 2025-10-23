@@ -15,3 +15,22 @@ App móvil para pequeñas bodegas que permite gestionar productos, ventas, compr
 - ✅ **Registro de compras/insumos**: producto, costo unitario y cantidad  
 - ✅ **Cierre de caja**: total de ventas, total de compras y utilidad neta  
 - ✅ **Reportes básicos**: historial de ventas y productos más vendidos
+
+## 🛠️ Tecnologías utilizadas
+- **Frontend**: Kotlin + Jetpack Compose (Material 3)
+- **Base de datos**: Room (SQLite local)
+- **Diseño UI**: Figma
+- **Control de versiones**: Git + GitHub
+
+## 📅 Cronograma del laboratorio (6 días)
+| Día | Actividad |
+|-----|----------|
+| **Día 1** | Planificación, roles, historias de usuario y prototipo en Figma |
+| **Día 2** | Configuración del proyecto y navegación base |
+| **Día 3** | Desarrollo de interfaz (UI/UX) |
+| **Día 4** | Conexión con base de datos y lógica de negocio |
+| **Día 5** | Cierre de caja, reportes y validaciones |
+| **Día 6** | Presentación final y documentación completa |
+
+## 👨‍🏫 Docente
+Juan León – Curso: Aplicaciones Móviles con Android
