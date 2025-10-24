@@ -14,6 +14,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.compose.rememberNavController
+import com.bodeapp.controlventas.navigation.AppNavigation
 import com.bodeapp.controlventas.ui.theme.BodeAppTheme
 
 
