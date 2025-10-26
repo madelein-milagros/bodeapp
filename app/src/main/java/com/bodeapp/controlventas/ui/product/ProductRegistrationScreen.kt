@@ -1,5 +1,6 @@
 package com.bodeapp.controlventas.ui.product
 
+import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -17,10 +18,24 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 
 @Composable
-fun ProductRegistrationScreen(navController: NavController) {
+fun ProductRegistrationScreen(
+    navController: NavController,
+    viewModel: ProductViewModel = viewModel()
+) {
     var name by remember { mutableStateOf("") }
     var price by remember { mutableStateOf("") }
     var stock by remember { mutableStateOf("") }
+
+    Button(onClick = {
+        if (name.isNotBlank() && price.isNotBlank() && stock.isNotBlank()) {
+            val p = price.toDoubleOrNull() ?: 0.0
+            val s = stock.toIntOrNull() ?: 0
+            viewModel.insertProducto(name, p, s)
+            navController.popBackStack()
+        }
+    }) {
+        Text("Guardar Producto")
+    }
 
     Column(
         modifier = Modifier
