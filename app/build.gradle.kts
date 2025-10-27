@@ -1,4 +1,6 @@
 import org.gradle.kotlin.dsl.implementation
+
+
 // Archivo: C:/Users/Milagros/AndroidStudioProjects/BodeApp/app/build.gradle.kts
 
 plugins {
@@ -61,6 +63,9 @@ dependencies {
     implementation(libs.androidx.material3)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.lifecycle.livedata.ktx)
+    implementation(libs.androidx.lifecycle.livedata.ktx)
+
+
 
     // Dependencias de Test y Debug
     testImplementation(libs.junit)
