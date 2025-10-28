@@ -108,3 +108,66 @@ fun HomeScreen(navController: NavController) {
                 )
             }
         }
+        Spacer(modifier = Modifier.weight(1f))
+
+        Text(
+            text = "Gestiona tu negocio de manera simple",
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(bottom = 16.dp),
+            textAlign = TextAlign.Center,
+            color = Color.Gray
+        )
+    }
+}
+
+@Composable
+fun HomeCard(
+    modifier: Modifier = Modifier,
+    title: String,
+    subtitle: String,
+    imageRes: Int,
+    circleColor: Color,
+    onClick: () -> Unit
+) {
+    Card(
+        modifier = modifier
+            .height(160.dp),
+        shape = RoundedCornerShape(20.dp),
+        colors = CardDefaults.cardColors(containerColor = Color.White),
+        elevation = CardDefaults.cardElevation(defaultElevation = 6.dp),
+        onClick = onClick
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(20.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+        ) {
+            Box(
+                modifier = Modifier
+                    .size(60.dp)
+                    .clip(CircleShape)
+                    .background(circleColor.copy(alpha = 0.15f)),
+                contentAlignment = Alignment.Center
+            ) {
+                Image(
+                    painter = painterResource(id = imageRes),
+                    contentDescription = title,
+                    modifier = Modifier.size(32.dp)
+                )
+            }
+            Spacer(modifier = Modifier.height(10.dp))
+            Text(
+                text = title,
+                style = MaterialTheme.typography.titleMedium.copy(fontWeight = FontWeight.Bold)
+            )
+            Text(
+                text = subtitle,
+                style = MaterialTheme.typography.bodySmall.copy(color = Color.Gray),
+                textAlign = TextAlign.Center
+            )
+        }
+    }
+}
