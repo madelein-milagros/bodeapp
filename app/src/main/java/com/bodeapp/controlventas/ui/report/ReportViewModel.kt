@@ -11,12 +11,21 @@ class ReportViewModel(application: Application) : AndroidViewModel(application) 
     private val compraDao = AppDatabase.getDatabase(application).compraDao()
     private val fechaHoy = java.time.LocalDate.now().toString()
 
-    // ✅ Ahora usamos Flow directamente (sin .asLiveData)
     val totalVentas = ventaDao.getVentasByDate(fechaHoy)
         .map { ventas -> ventas.sumOf { it.total } }
 
     val totalCompras = compraDao.getComprasByDate(fechaHoy)
         .map { compras -> compras.sumOf { it.total } }
 
+    val comprasDetalle = compraDao.getComprasByDate(fechaHoy)
+
     val productosMasVendidos = ventaDao.getProductosMasVendidos(fechaHoy)
+
+    fun getCountVentas(): Int {
+        return 0
+    }
+
+    fun getCountCompras(): Int {
+        return 0
+    }
 }
